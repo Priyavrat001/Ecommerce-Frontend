@@ -1,5 +1,12 @@
 # Getting Started with Create React App
 
+# Package i use in this project
+npm install---> axios, react-helmet, react-redux, redux-thunk, redux-devtools-extension, overlay-navbar
+# Warning
+Please read the docs before installing it beacause some of extension may old and cause your project some harm and may be slow your project runtime.
+# Github Link
+https://github.com/meabhisingh/mernProjectEcommerce
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
