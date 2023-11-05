@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 # Package i use in this project
-npm install---> axios, react-helmet, react-redux, redux-thunk, redux-devtools-extension, overlay-navbar
+npm install---> axios, react-helmet, react-redux, redux-thunk, redux-devtools-extension, overlay-navbar, react-rating-stars-component
 # Warning
 Please read the docs before installing it beacause some of extension may old and cause your project some harm and may be slow your project runtime.
 # Github Link
