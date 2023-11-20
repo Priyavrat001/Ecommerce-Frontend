@@ -1,9 +1,14 @@
 # Getting Started with Create React App
 
 # Package i use in this project
-npm install---> axios, react-helmet, react-redux, redux-thunk, redux-devtools-extension, overlay-navbar, react-rating-stars-component
+npm install---> axios, react-helmet, react-redux, redux-thunk, redux-devtools-extension, overlay-navbar, react-rating-stars-component, concurrently
+
 # Warning
 Please read the docs before installing it beacause some of extension may old and cause your project some harm and may be slow your project runtime.
+
+# Importent
+If you are facing nodemon error when you try use concurrently please install nodemon in your frontend to to aviod the error.
+
 # Github Link
 https://github.com/meabhisingh/mernProjectEcommerce
 
