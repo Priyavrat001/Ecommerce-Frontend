@@ -15,7 +15,7 @@ export const getProduct = createAsyncThunk("getallProduct", async(rejectWithValu
 
 // read action on single product
 export const getSingleProduct = createAsyncThunk("getSingleProduct", async(id, {rejectWithValue})=>{
-    const response = await fetch(`http://localhost:5000/api/product/getsingleproduct${id}`)
+    const response = await fetch(`http://localhost:5000/api/product/getsingleproduct/${id}`)
     // console.log("this is response product ", response)
     try {
         const result = await response.json()
@@ -31,6 +31,7 @@ const productDetails = createSlice({
     name:"productDetails",
     initialState: {
         products:[],
+        product:{} ,
         loading:false,
         error:null
     },
@@ -54,7 +55,7 @@ const productDetails = createSlice({
         },
         [getSingleProduct.fulfilled]:(state, action)=>{
             state.loading=false;
-            state.products = action.payload;
+            state.product = action.payload;
         },
         [getSingleProduct.rejected]:(state, action)=>{
             state.loading=false;
