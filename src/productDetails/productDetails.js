@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 
 // read action product
-export const getProduct = createAsyncThunk("getallProduct", async(rejectWithValue)=>{
+export const getProduct = createAsyncThunk("getallProduct", async(id, {rejectWithValue})=>{
     const response = await fetch("http://localhost:5000/api/product/getallproduct")
     // console.log("this is response product ", response)
     try {
@@ -26,15 +26,22 @@ export const getSingleProduct = createAsyncThunk("getSingleProduct", async(id, {
 })
 
 
-
 const productDetails = createSlice({
     name:"productDetails",
     initialState: {
         products:[],
         product:{} ,
         loading:false,
-        error:null
+        error:null,
+        searchData: [],
     },
+
+    reducers: {
+        searchProduct: (state, action) => {
+          console.log(action.payload);
+          state.searchData = action.payload;
+        },
+      },
 
     extraReducers:{
         //For all product
@@ -69,3 +76,5 @@ const productDetails = createSlice({
 
 
 export default productDetails.reducer;
+
+export const {searchProduct} = productDetails.actions;
