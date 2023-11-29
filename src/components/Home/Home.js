@@ -15,6 +15,9 @@ if(error){
    alert("Something went wrong loading in this page.")
 }
   useEffect(() => {
+    if(error){
+      return alert(error)
+    }
     dispatch(getProduct())
 
   }, [dispatch, error])
