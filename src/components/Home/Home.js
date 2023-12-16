@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Home.css";
 import { CgMouse } from "react-icons/cg";
 import Product from '../Product/Product';
 import MetaData from '../metdata/MetaData';
-import { getProduct } from "../../productDetails/productDetails"
-import { useSelector, useDispatch } from "react-redux";
+// import { getall } from "../../productDetails/productDetails"
+// import { useSelector, useDispatch } from "react-redux";
 import Loading from '../../Loading';
 
 const Home = () => {
-  const dispatch = useDispatch();
-  const { products, loading, error } = useSelector((state) => state.app)
-  // console.log("this product is from home components ", products)
-if(error){
-   alert("Something went wrong loading in this page.")
-}
+  const [products, setProducts] = useState();
+  const loading = false;
   useEffect(() => {
-    if(error){
-      return alert(error)
+    const fetchData = async()=>{
+      try {
+        const response = await fetch("http://localhost:5000/api/product/getallproduct");
+      const result = await response.json();
+      setProducts(result);
+      } catch (error) {
+        console.error(error)
+      }
     }
-    dispatch(getProduct())
-
-  }, [dispatch, error])
+    fetchData()
+  }, [])
+  
 
 
   return (
